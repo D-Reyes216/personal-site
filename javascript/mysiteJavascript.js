@@ -31,6 +31,32 @@ if (localStorage.getItem('is-dark-mode')=="true") {
   } 
 }
 
+
+//div intersection slider
+const divs = document.querySelectorAll('.grid-item');
+
+const options = {
+  threshold: .33
+}
+
+function addSlideIn(entries) {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('slide-in');
+    }
+    else {
+      entry.target.classList.remove('slide-in')
+    }
+  })
+}
+
+const observer = new IntersectionObserver(addSlideIn, options);
+
+divs.forEach(div => {
+  observer.observe(div);
+})
+
+
 //image slider logic
 function imageSlider(images, previousImage, nextImage){
 
@@ -66,6 +92,7 @@ function imageSlider(images, previousImage, nextImage){
   }
 
   initializeSlider();
+  
 
   previousImage.addEventListener('click', function() {
     slideLeft();
@@ -74,6 +101,7 @@ function imageSlider(images, previousImage, nextImage){
   nextImage.addEventListener('click', function() {
     slideRight();
   });
+  
 }
 
 //image slider 1

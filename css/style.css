@@ -16,6 +16,10 @@ img {
   padding: 3px;
 }
 
+h2 {
+  text-decoration: underline;
+}
+
 .heading {
   text-decoration: underline;
 }
@@ -25,12 +29,21 @@ img {
 }
 
 .grid-item {
+  opacity: 0;
   display: flex;
   border-style: double;
   border-color: midnightblue;
   margin-top: 5px;
+  padding-bottom: 6rem;
   transition: all .5s ease-in;
 }
+
+.pic {
+  max-height: 30rem;
+  max-width: 30rem;
+  animation: fade-in 4s forwards;
+}
+
 
 /* dark mode */
 .light-dark-button{
@@ -110,9 +123,7 @@ input:checked + .slider:before {
   justify-content: space-evenly;
   width: 100%;
   min-height: calc(20vh - 4.25rem);
-  /* place-content: ; */
   gap: 2rem;
-  /* text-align: center; */
 }
 
 #slider-images, #slider-images2 {
@@ -168,45 +179,70 @@ input:checked + .slider:before {
 }
 
 
-.grid-item {
-  display: flex;
-  justify-content: space-evenly;
-  padding-bottom: 6rem;
+/* div intersection slider */
+.slide-in {
+  opacity: 1 !important;
+  transform: translateX(0); 
 }
 
-.footer {
-  color: midnightblue;
+
+/* draggable elements */
+.drag-drop-shapes {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  height: 15rem;
 }
 
-.about {
-  grid-area: about;
+#dropzone-square {
+  height: 7rem;
+  width: 7rem;
+  background-color: #7732a8;
+  margin: 2rem;
 }
 
-.topics {
-  grid-area: topics;
+#dropzone-triangle {
+  margin: 2rem;
+  height: 0;
+  width: 0;
+  border-left: 4rem solid transparent;
+  border-right: 4rem solid transparent; 
+  border-bottom: 7rem solid #7732a8;
 }
 
-.hobbies {
-  grid-area: hobbies;
+#dropzone-circle {
+  height: 7rem;
+  width: 7rem;
+  margin: 2rem;
+  border-radius: 50%;
+  border-style: 1px;
+background-color: #7732a8;
 }
 
-.pics {
-  grid-area: pics;
+#drag-square {
+  background-color: #2596be;
+  height: 4rem;
+  width: 4rem;
+  margin: 2rem;
 }
 
-.random {
-  grid-area: random;
+#drag-triangle {
+  height: 0;
+  width: 0;
+  margin-top: 4rem;
+  margin: 2rem;
+  border-left: 2rem solid transparent;
+  border-right: 2rem solid transparent;
+  border-bottom: 4rem solid #2596be;
 }
 
-.footer {
-  grid-area: footer;
+#drag-circle {
+  background-color: #2596be;
+  height: 4rem;
+  width: 4rem;
+  margin: 2rem;
+  border-radius: 50%;
 }
 
-.pic {
-  max-height: 30rem;
-  max-width: 30rem;
-  animation: fade-in 4s forwards;
-}
 
 @media (max-width: 760px) {
   .grid-pictures {
