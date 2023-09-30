@@ -19,8 +19,10 @@ dropzoneSquare.addEventListener('drop', (event) => {
   if(draggableId == "drag-square") {
     dropzoneSquare.innerText = "Correct!";
     dropzoneSquare.appendChild(element, dropzoneSquare.children[0]); 
+  } else if(dropzoneSquare.children[0] != null){
+      return null;
   } else {
-    dropzoneSquare.innerText = "Oops, try again.";
+      dropzoneSquare.innerText = "Oops, try again.";
   }
 });
 
@@ -44,8 +46,10 @@ dropzoneTriangle.addEventListener('drop', (event) => {
   if(draggableId == "drag-triangle") {
     dropzoneTriangle.innerText = "Correct!";
     dropzoneTriangle.appendChild(element, dropzoneTriangle.children[0]); 
+  } else if(dropzoneTriangle.children[0] != null){
+      return null;
   } else {
-    dropzoneTriangle.innerText = "Oops, try again.";
+      dropzoneTriangle.innerText = "Oops, try again.";
   }
 });
 
@@ -67,9 +71,11 @@ dropzoneCircle.addEventListener('drop', (event) => {
   console.log(draggableId); 
   const element = document.getElementById(draggableId);
   if(draggableId == "drag-circle") {
-        dropzoneCircle.innerText = "Correct!";
-        dropzoneCircle.appendChild(element, dropzoneCircle.children[0]); 
+    dropzoneCircle.innerText = "Correct!";
+    dropzoneCircle.appendChild(element, dropzoneCircle.children[0]); 
+  } else if(dropzoneCircle.children[0] != null){
+      return null;
   } else {
-    dropzoneCircle.innerText = "Oops, try again.";
+      dropzoneCircle.innerText = "Oops, try again.";
   }
 });

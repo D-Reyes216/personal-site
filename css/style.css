@@ -20,10 +20,23 @@ h2 {
   text-decoration: underline;
 }
 
+.header {
+  display: flex;
+  justify-content: space-between;
+  padding: 5px;
+}
+
 .heading {
   text-decoration: underline;
 }
 
+.nav-menu {
+  width: 21.5rem;
+  padding: .3rem;
+  border: 3px solid darkslategray;
+  border-radius: 5px;
+  background-color: silver;
+}
 .indent {
   text-indent: 40px;
 }
@@ -44,6 +57,14 @@ h2 {
   animation: fade-in 4s forwards;
 }
 
+.project {
+  padding: 3.5rem;
+  display: grid;
+}
+
+.project img{
+  max-width: 25vw;
+}
 
 /* dark mode */
 .light-dark-button{
@@ -214,8 +235,7 @@ input:checked + .slider:before {
   width: 7rem;
   margin: 2rem;
   border-radius: 50%;
-  border-style: 1px;
-background-color: #7732a8;
+  background-color: #7732a8;
 }
 
 #drag-square {
