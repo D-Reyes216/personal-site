@@ -46,12 +46,29 @@
             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
           </div>
           <div class="modal-body">
-            <form action="submit_form" method="get">   
-            <input class="rounded" type="text" id="fname" placeholder="First Name"><br>
-            <input class="rounded" type="text" id="lname" name="lname" placeholder="Last Name"><br>
-            <input class="rounded" type="email" id="e-mail" name="e-mail" placeholder="e-mail"><br>
-            <input class="rounded" type="text" id="phonenum" name="phonenum" placeholder="Phone Number"><br><br>
-            <input type="submit" class="btn btn-success" value="Subscribe" data-bs-toggle="modal" data-bs-target="#exampleModal">
+            <div id="form-submitted-msg">Form successfully submitted</div>
+            <form id="subscribeForm" action="submit_form" method="post">   
+              <div class="input-group">
+                <label for="fname">First Name: </label>
+                <input class="rounded form-control" type="text" id="fname" name="fname" placeholder="First Name" required>
+                <small class="error-msg invalid-feedback">Required</small>
+              </div>
+              <div class="input-group">
+                <label for="lname">Last Name: </label>
+                <input class="rounded form-control" type="text" id="lname" name="lname" placeholder="Last Name" required>
+                <small class="error-msg invalid-feedback">Required</small>
+              </div>
+              <div class="input-group">
+                <label for="e-mail">E-mail: </label>
+                <input class="rounded form-control" type="email" id="e-mail" name="e-mail" placeholder="e-mail" required>
+                <small class="error-msg invalid-feedback">Required</small>
+              </div>
+              <div class="input-group">
+                <label for="phonenum">Phone #: </label>
+                <input class="rounded form-control" type="tel" id="phonenum" name="phonenum" placeholder="1234567890" pattern="[0-9]{10}" required>
+                <small class="error-msg invalid-feedback">Required</small>
+              </div>
+            <input type="submit" class="btn btn-success submit" value="Subscribe" data-bs-toggle="modal" data-bs-target="#exampleModal" disabled>
           </form>             
           </div>
           <div class="modal-footer">

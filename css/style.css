@@ -263,6 +263,35 @@ input:checked + .slider:before {
   border-radius: 50%;
 }
 
+/* form validation */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+#form-submitted-msg {
+  margin-bottom: 3rem;
+  border-radius: 3px;
+  background-color: rgb(67, 161, 67);
+  padding: 0.5rem;
+  width: 40%;
+  text-align: center;
+  color: #fff;
+  display: none;
+}
+
+#subscribeForm {
+  width: 60%;
+}
+
+.input-group {
+  margin-bottom: 1.5rem;
+}
+
+.error-msg {
+  display: none;
+}
 
 @media (max-width: 760px) {
   .grid-pictures {

@@ -57,6 +57,91 @@ divs.forEach(div => {
 })
 
 
+//form validation
+if(document.getElementById('subscribeForm')) {
+  const form = document.getElementById('subscribeForm')
+  const submitButton = document.querySelector('.submit')
+  const successMessage = document.getElementById('form-submitted-msg')
+
+  const formElements = [ ...form.elements ]
+
+  const allInputsValid = () => {
+    const valid = formElements.every((element) => {
+      let letters = /^[A-Za-z]+$/;
+      if(formElements.indexOf(element) == 0 || formElements.indexOf(element) == 1){
+        if(element.value.match(letters) != null)
+        return true ;
+      }else
+        return element.checkValidity();
+    })
+
+    return valid;
+  }
+
+  const handleChange = () => {
+    let letters = /^[A-Za-z]+$/;
+    function letterOnlyCheck(element) {
+      if(element.value.match(letters) == null){          
+        element.style.borderColor = 'red'
+        element.nextElementSibling.style.color = 'red'
+        element.nextElementSibling.style.display = 'block'
+        element.nextElementSibling.innerText = "Names must only have letters" 
+    } 
+  }
+    formElements.forEach((element) => {
+     
+        if (!element.checkValidity() && element.nodeName !== 'BUTTON') {
+          element.style.borderColor = 'red'
+          element.nextElementSibling.style.color = 'red'
+          element.nextElementSibling.style.display = 'block'
+          element.previousElementSibling.style.color = 'red'
+          element.nextElementSibling.innerText = "Required" 
+
+          if(formElements.indexOf(element) == 3 && element.value != '' ){
+            element.nextElementSibling.innerText = "invalid phone number or phone number format" 
+          }
+        }
+
+        if (element.checkValidity() && element.nodeName !== 'BUTTON' && element.nextElementSibling != null) {
+          element.style.borderColor = '#CED4DA'
+          element.nextElementSibling.style.color = '#CED4DA'
+          element.nextElementSibling.style.display = 'none'
+          element.previousElementSibling.style.color = '#212529'
+          if(formElements.indexOf(element) == 0 || formElements.indexOf(element) == 1){
+            letterOnlyCheck(element);
+          }
+        }       
+      })
+    
+  
+    if (allInputsValid()) {
+      submitButton.removeAttribute('disabled', '')
+    } else {
+      submitButton.setAttribute('disabled', '')
+    }
+  }
+
+  const handleSubmit = (e) => {
+    e.preventDefault()
+
+    if (allInputsValid()) {
+      successMessage.style.display = 'block'
+      form.reset()
+      submitButton.setAttribute('disabled', '')
+
+      setTimeout(() => {
+        successMessage.style.display = 'none'
+      }, 3000)
+    }
+  }
+
+  formElements.forEach((element) => {
+    element.addEventListener('change', handleChange);
+  })
+
+  form.addEventListener('submit', (e) => handleSubmit(e));
+}
+
 //image slider logic
 function imageSlider(images, previousImage, nextImage){
 
@@ -103,6 +188,7 @@ function imageSlider(images, previousImage, nextImage){
   });
   
 }
+
 
 //image slider 1
 const images = document.querySelectorAll('#slider-images img');
