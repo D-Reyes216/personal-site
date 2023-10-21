@@ -57,13 +57,18 @@ h2 {
   animation: fade-in 4s forwards;
 }
 
+.project-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+}
+
 .project {
   padding: 3.5rem;
   display: grid;
 }
 
 .project img{
-  max-width: 25vw;
+  max-width: 20vw;
 }
 
 /* dark mode */
@@ -133,11 +138,11 @@ input:checked + .slider:before {
 }
 
 /* image slider */
- *, *::before, *::after {
+ /* *, *::before, *::after {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
-}
+} */
 
 .slider-container {
   display: flex;
