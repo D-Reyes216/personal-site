@@ -309,7 +309,6 @@ input:checked + .slider:before {
     max-width: 10vw;
   }
 
-
 }
 @media (max-width: 1445px) {
   .grid-pictures {
@@ -331,7 +330,14 @@ input:checked + .slider:before {
     width: 85vh;
     height: 85vh;
   }
-
+  .project-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
+  .project img{
+    max-width: 70%;
+    margin: auto;
+  }
   .button{
     position: absolute;
     top: 95%;
