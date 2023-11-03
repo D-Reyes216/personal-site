@@ -298,6 +298,27 @@ input:checked + .slider:before {
   display: none;
 }
 
+/* Leaflet map */
+.leaflet-map {
+  display: flex;
+}
+
+#map {
+  margin: 1rem ;
+}
+
+.leaflet-map button {
+  background-color: rgb(25, 115, 143);
+  color: white;
+  border-radius: 5px;
+  padding: 5px;
+}
+
+/* gets rid of map grid and marker borders becauese they use 'img' tag which i used for my own images */
+.leaflet-pane img {
+  border: 0px; 
+}
+
 @media (max-width: 760px) {
   .grid-pictures {
     display: flex;

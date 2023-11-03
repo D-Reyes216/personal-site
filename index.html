@@ -8,7 +8,9 @@
   <link rel="icon" type="image/x-icon" href="./media/images/orb_favicon.png">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css">
   <link rel="stylesheet" href="./css/style.css">
-  
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.3/dist/leaflet.css"
+  integrity="sha256-kLaT2GOSpHechhsozzB+flnD+zUyjE2LlfWPgU04xyI=" crossorigin="" />
+
 </head>
   <body>
   <h1 class="heading" style="text-align:center">Personal Website of David Reyes</h1>
@@ -71,8 +73,46 @@
 
     </div>
   </div>
-    
+
+  <h2>Leaflet Map</h2>
+  <div class="leaflet-map">
+  <div id="map" style="width: 700px; height: 450px;"></div>
+
+  <div>
+  <h3>Create a Shape by entering coordinates</h3>
+
+  <label for="latitude1">Latitude1</label>
+  <input type="text" id="latitude1" placeholder="0">
+  <label for="longitude1">Longitude1</label>
+  <input type="text" id="longitude1" placeholder="0"> <br>
+
+  <label for="latitude2">Latitude2</label>
+  <input type="text" id="latitude2" placeholder="0">
+  <label for="longitude2">Longitude2</label>
+  <input type="text" id="longitude2" placeholder="0"> <br> 
+
+  <label for="latitude3">Latitude3</label>
+  <input type="text" id="latitude3" placeholder="0">
+  <label for="longitude3">Longitude3</label>
+  <input type="text" id="longitude3" placeholder="0"> <br>
+
+  <label for="latitude4">Latitude4</label>
+  <input type="text" id="latitude4" placeholder="0">
+  <label for="longitude4">Longitude4</label>
+  <input type="text" id="longitude4" placeholder="0"> <br>
+
+  <button id="create-shape">Create Shape</button>
+  <br>
+
+  <h3>Create a shape by placing markers on the map and using the Connect Markers button</h3>
+  <button id="connect-markers">Connect Markers</button>
+  <button id="remove-marker">Remove Markers</button> <br><br>
+  <button id="remove-shapes">Remove Shapes</button>
   </div>
+</div>
+  
+<script src="https://unpkg.com/leaflet@1.9.3/dist/leaflet.js"
+integrity="sha256-WBkoXOwTeyKclOHuWtc+i2uENFpDZ9YPdf5Hf+D7ewM=" crossorigin=""></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script> 
 <script src="./javascript/mysiteJavascript.js"></script>
 <script src="./javascript/indexpage.js"></script>
