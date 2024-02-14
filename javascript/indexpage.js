@@ -16,10 +16,10 @@ dropzoneSquare.addEventListener('drop', (event) => {
   const draggableId = event.dataTransfer.getData('text/plain'); 
   console.log(draggableId); 
   const element = document.getElementById(draggableId);
-  if(draggableId == "drag-square") {
+  if(draggableId == "drag-square") { //if dragged shape matches dropzone shape then the dragged shape is put into dropzone
     dropzoneSquare.innerText = "Correct!";
     dropzoneSquare.appendChild(element, dropzoneSquare.children[0]); 
-  } else if(dropzoneSquare.children[0] != null){
+  } else if(dropzoneSquare.children[0] != null){ //prevents another shape from being put in the area if one is already there
       return null;
   } else {
       dropzoneSquare.innerText = "Oops, try again.";
@@ -43,10 +43,10 @@ dropzoneTriangle.addEventListener('drop', (event) => {
   const draggableId = event.dataTransfer.getData('text/plain'); 
   console.log(draggableId); 
   const element = document.getElementById(draggableId);
-  if(draggableId == "drag-triangle") {
+  if(draggableId == "drag-triangle") { //if dragged shape matches dropzone shape then the dragged shape is put into dropzone
     dropzoneTriangle.innerText = "Correct!";
     dropzoneTriangle.appendChild(element, dropzoneTriangle.children[0]); 
-  } else if(dropzoneTriangle.children[0] != null){
+  } else if(dropzoneTriangle.children[0] != null){ //prevents another shape from being put in the area if one is already there
       return null;
   } else {
       dropzoneTriangle.innerText = "Oops, try again.";
@@ -70,10 +70,10 @@ dropzoneCircle.addEventListener('drop', (event) => {
   const draggableId = event.dataTransfer.getData('text/plain'); 
   console.log(draggableId); 
   const element = document.getElementById(draggableId);
-  if(draggableId == "drag-circle") {
+  if(draggableId == "drag-circle") { //if dragged shape matches dropzone shape then the dragged shape is put into dropzone
     dropzoneCircle.innerText = "Correct!";
     dropzoneCircle.appendChild(element, dropzoneCircle.children[0]); 
-  } else if(dropzoneCircle.children[0] != null){
+  } else if(dropzoneCircle.children[0] != null){ //prevents another shape from being put in the area if one is already there
       return null;
   } else {
       dropzoneCircle.innerText = "Oops, try again.";
@@ -126,17 +126,13 @@ attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreet
 
 
 function createShape() {
-    let shape = null;   //initialize shape to null to prevent errors when removing shape when no shape exists
-    if(shape != null){  //remove previous shape if it exists
-        shape.remove()
-    }
     let latlngs = [     //get latitudes/longitudes from user input
         [lat1.value, long1.value], 
         [lat2.value, long2.value], 
         [lat3.value, long3.value], 
         [lat4.value, long4.value]];
 
-    shape = L.polygon(latlngs, {color: 'blue'}).addTo(map); //create shape with latitudes/longitudes given by user
+    let shape = L.polygon(latlngs, {color: 'blue'}).addTo(map); //create shape with latitudes/longitudes given by user
     shapes.push(shape);
     map.fitBounds(shape.getBounds());   //zoom to created shape
 }

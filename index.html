@@ -36,7 +36,7 @@
 <h2>Homepage</h2>
   <div class="grid-item hobbies">
     <header>         
-      <img class="rounded" src="https://drive.google.com/uc?id=1mRSSFUm75mhW9qutN89JX4o11xTDlQqj" alt="picture of me" width="240" style="float:right"><br>  
+      <img class="rounded" src="../media/images/me.png" alt="picture of me" width="240" style="float:right"><br>  
 
       
       <a href="https://www.linkedin.com/in/david-reyes-828032286/" target="_blank">LinkedIn</a><br>
@@ -49,7 +49,7 @@
       </p>
 
       <p class="indent">
-          I tried going to school to learn programming before but some things came up and I was unable to continue to pursue
+          I tried going to school to learn programming before but some things came up and I was unable to continue pursuing
         that career path. I thought about pursuing other options including 3d art(which you can see some of in this website)
         but ultimately I wish to once again pursue a career with computers and programming. Now, years after my initial attempt 
         I am trying again, and with this second chance I hope to be able to reach my goals.
@@ -62,11 +62,12 @@
   <div class="grid-item">
 
     <div class="drag-drop-shapes">
-
+      <!-- dropzone areas for draggable shapes -->
         <div id="dropzone-square"></div>
         <div id="dropzone-triangle"></div>
         <div id="dropzone-circle"></div>
-           
+        
+        <!-- shapes to drag and drop into dropzones above -->
         <div id="drag-square" draggable="true"></div>
         <div id="drag-triangle" draggable="true"></div>
         <div id="drag-circle" draggable="true"></div> 
@@ -80,7 +81,7 @@
 
   <div>
   <h3>Create a Shape by entering coordinates</h3>
-
+  <!-- text input areas for shape coordinates -->
   <label for="latitude1">Latitude1</label>
   <input type="text" id="latitude1" placeholder="0">
   <label for="longitude1">Longitude1</label>
@@ -100,14 +101,14 @@
   <input type="text" id="latitude4" placeholder="0">
   <label for="longitude4">Longitude4</label>
   <input type="text" id="longitude4" placeholder="0"> <br>
-
+  <!-- button to create shape based on user input coordinates -->
   <button id="create-shape">Create Shape</button>
   <br>
 
   <h3>Create a shape by placing markers on the map and using the Connect Markers button</h3>
   <button id="connect-markers">Connect Markers</button>
   <button id="remove-marker">Remove Markers</button> <br><br>
-  <button id="remove-shapes">Remove Shapes</button>
+  <button id="remove-shapes">Remove Shapes</button> <!-- removes all shapes including ones made with input coordinates -->
   </div>
 </div>
   
