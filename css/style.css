@@ -69,6 +69,8 @@ h2 {
 
 .project img{
   max-width: 20vw;
+  height: 14vmax;
+  width: 14vmax;
 }
 
 /* dark mode */
