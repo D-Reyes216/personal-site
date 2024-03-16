@@ -44,9 +44,9 @@ function addSlideIn(entries) {
     if (entry.isIntersecting) {
       entry.target.classList.add('slide-in');
     }
-    else {
-      entry.target.classList.remove('slide-in')
-    }
+    // else {
+    //   entry.target.classList.remove('slide-in')
+    // }
   })
 }
 
